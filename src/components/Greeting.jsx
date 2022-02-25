@@ -1,8 +1,7 @@
 const Greeting = () =>{
+
     return(
-        <div>
-            <h4>Gracias por suscribirte</h4>
-        </div>
+     'soy un saludo'
     )
 }
 export default Greeting
