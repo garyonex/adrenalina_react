@@ -61,14 +61,14 @@ reportWebVitals();
 // console.log(obj);
 
 
-var obj1={
-    nombre:'gary',
-    edad:30,
-}
-// let nombre = obj1.nombre
-// let edad = obj1.edad
+// var obj1={
+//     nombre:'gary',
+//     edad:30,
+// }
+// // let nombre = obj1.nombre
+// // let edad = obj1.edad
 
-const {nombre, edad} = obj1
+// const {nombre, edad} = obj1
 
-console.log(nombre);
-console.log(edad);
+// console.log(nombre);
+// console.log(edad);
