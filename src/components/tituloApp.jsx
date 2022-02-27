@@ -8,7 +8,7 @@
         <div>
             <h1>{ titulo }</h1>
             <h2>{subtitulo}</h2>
-            <button onClick={saludo}>ejecutar saludo</button>
+            {/* <button onClick={saludo}>ejecutar saludo</button> */}
         </div>
     )
     

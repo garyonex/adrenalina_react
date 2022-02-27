@@ -1,7 +1,7 @@
-import Greeting from "./Greeting"
+import Greeting from "../container/Greeting"
 import ImagenContainer from "./ImagenContainer"
 import LogoContainer from "./logoContainer"
-
+import imagen from './imagenes/adrenalina.png'
 import TituloApp from "./tituloApp"
 
 const NavBar = (saludo)=>{
@@ -9,7 +9,7 @@ const NavBar = (saludo)=>{
            
             <div className="">
                 <div className="navBar-titulo">
-                        <TituloApp  titulo={<img src="./imagenes/logoGolpea.png"/>} />
+                        <TituloApp  titulo={<img src={imagen}/>} />
                         </div>
                     <nav >
                         
@@ -23,7 +23,7 @@ const NavBar = (saludo)=>{
                             <li><a href="#">Contacto</a></li>
                         </ul>
                      
-                       {/* <button onClick={saludo}><ImagenContainer /><br />Click</button> */}
+                       <button><ImagenContainer /><br />Click</button>
                     </nav>
                 
                     
