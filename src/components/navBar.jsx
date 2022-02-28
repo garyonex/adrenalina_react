@@ -9,7 +9,7 @@ const NavBar = (saludo)=>{
            
             <div className="">
                 <div className="navBar-titulo">
-                        <TituloApp  titulo={<img src={imagen}/>} />
+                        <TituloApp  titulo={<img className="titulo-header" src={imagen}/>} />
                         </div>
                     <nav >
                         
@@ -23,7 +23,7 @@ const NavBar = (saludo)=>{
                             <li><a href="#">Contacto</a></li>
                         </ul>
                      
-                       <button><ImagenContainer /><br />Click</button>
+                       <button className="botonComprar"><ImagenContainer /><br />Click</button>
                     </nav>
                 
                     

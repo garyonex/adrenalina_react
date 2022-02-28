@@ -52,7 +52,7 @@ nav ul{
   flex-direction: row;
   justify-content: space-between;
   font-size: 20px;
-  margin-left: -70px;
+  margin-left: -50px;
   
 }
 nav ul li{
@@ -81,7 +81,8 @@ nav ul li img{
   
 }
 .navBar-titulo h1{
-  margin: 0;
+  margin: -25px;
+  padding: 16px;
   text-align: center;
   font-size: 5em;
   background-color: #045de9;
@@ -89,7 +90,11 @@ nav ul li img{
 
 }
 .botonComprar{
-  margin-right: 30px;
+  margin-right: 40px;
+}
+.titulo-header{
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 body{
  background-color: rgba(206, 186, 216, 0.659);
