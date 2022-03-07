@@ -8,12 +8,18 @@ function ItemCount ({inicial, stock}) {
   const handleCount = () =>{
     // contador += 1 => contador = contador + 1 ( es igual )
     // console.log(contado
-    setCount(count + 1);
+    if( count < stock){
+      setCount(count + 1);
+    }
     setFecha(Date())
   }
 
   const subtractCount = () =>{
-    setCount(count - 1)
+    
+    if( count > inicial){
+      setCount(count - 1)
+    }
+    
     setFecha(Date())
   }
   // console.log(array);
