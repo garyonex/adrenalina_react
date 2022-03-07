@@ -7,6 +7,10 @@ import InputApp from './components/input/input';
 import Greeting from './container/Greeting';
 import { getRoles } from '@testing-library/react';
 import imagen from './components/imagenes/adrenalina.png'
+import ItemlistContainer from './components/ItemListContainer';
+import Div from './components/Div';
+import ItemCount from './container/ItemCount';
+
 
 
 
@@ -21,20 +25,23 @@ function App() //componente
     
       <div 
           className ='App'
-          
-              
-          // Las {} que estan primeras es para indicar que se inserta JSX
-            onClick={ ()=>console.log('soy app')}
+
       > <img src="" alt="" />
         <NavBarApp />
           <TituloApp />
           <img src="" alt=""  />
           <TituloApp />
-          <InputApp />
+          {/* <InputApp /> */}
               hola soy app 
-            
             <ComponenteClase />
             <Greeting saludo ='soy un saludito'/>
+            {/* <ItemlistContainer div = { Div }/> */}
+        <div>
+
+        </div>
+            <ItemCount inicial ={1} stock={10}/>
+
+           
       </div>
     
     
