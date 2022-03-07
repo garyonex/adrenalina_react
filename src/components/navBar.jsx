@@ -25,6 +25,7 @@ const NavBar = (saludo)=>{
                      
                        <button className="botonComprar"><ImagenContainer /><br />Click</button>
                     </nav>
+                    
                 
                     
             </div>
