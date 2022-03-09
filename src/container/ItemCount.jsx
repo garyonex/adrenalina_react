@@ -1,17 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Div from '../components/Div';
 
-function ItemCount ({inicial, stock}) {
+
+function ItemCount ({inicial, stock, div}) {
   const [count , setCount] = useState(inicial)
   const [fecha, setFecha] = useState(Date()) // Esto para darle una forma persistente
+  
+      // const [bool , setBool] = useState(true)
+      // useEffect(()=>{
+      //   console.log('llamda api o tarea pesada 1 siempre');
+      //     return ()=> {console.log('al desmontar');}// primero se generara esto, luego se genera el log
+      // },)
+      // useEffect(()=>{
+      //   console.log('llamda api o tarea pesada 2 una sola vez');
+      //   //LLAMADAS A LAS APIS, SERA UNA SOLA VEZ
 
+      // },[])//esto genera un filtro 
+
+      // useEffect(()=>{
+      //   console.log('solo si cambio bool');
+
+      // },[bool])//solo si cambia bool es que se ejecuta
 
   const handleCount = () =>{
     // contador += 1 => contador = contador + 1 ( es igual )
     // console.log(contado
+    // setFecha(Date())
     if( count < stock){
       setCount(count + 1);
     }
-    setFecha(Date())
+ 
   }
 
   const subtractCount = () =>{
@@ -19,27 +37,27 @@ function ItemCount ({inicial, stock}) {
     if( count > inicial){
       setCount(count - 1)
     }
-    
-    setFecha(Date())
+ 
   }
   // console.log(array);
   function onAdd() {
     return console.log(count);
   }
+
+  console.log('item count 3');
   return(
         <div >
-          <div className="contador">
-            <p> Botellas 🍾</p>
-            {/* <h4>{inicial}</h4>
-            <h4>Stock {stock}</h4> */}
-            <div className="contador-btn">
-              <button onClick={subtractCount}>👎</button>
-              <label>{ count }</label>
-              <button onClick = {handleCount}>👍</button>
-              <button onClick={onAdd}>AGREGAR</button>
+            {/* <Div /> */}
+            <div className="contador">
+              <div className="contador-btn">
+                <button onClick={subtractCount}>👎</button>
+                <label>{ count }</label>
+                <button onClick = {handleCount}>👍</button>
+                <button onClick={onAdd}>AGREGAR</button>
+                {/* <button onClick={()=>setBool(!bool)}>Boleano</button> */}
+              </div>
             </div>
-          </div>
-          <span>{fecha}</span>
+            {/* <span>{fecha}</span> */}
         </div>
   ) 
 }

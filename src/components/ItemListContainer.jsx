@@ -1,41 +1,32 @@
 import { useState } from 'react'
 
-import Div from "./Div";
 
-function ItemListContainer ({div}) {
-  const [count , setCount] = useState(0)
-  const [fecha, setFecha] = useState(Date()) // Esto para darle una forma persistente
-
-
-  const handleCount = () =>{
-    // contador += 1 => contador = contador + 1 ( es igual )
-    // console.log(contado
-    setCount(count + 1)
-    setFecha(Date())
+const task = new Promise((resolve, reject)=>{
+  //tareas que realizaremos
+  // console.log('hola soy promesa');
+  let url = 'gary.com'
+  if(url === 'gary.com'){
+    resolve('200 ok')
+  }else{
+    reject('400 not found')
   }
-
-  const subtractCount = () =>{
-    setCount(count- 1)
-    setFecha(Date())
-  }
-  // console.log(array);
   
+})
+
+function ItemListContainer () {
+//   console.log(task);
+	task
+	.then((respuesta)=>{
+	throw new Error('Esto es un error')// esto es un error de 'codigo' aunque este resuelto
+	console.log(respuesta)}, 
+		// (error)=>console.log(error)
+	)
+	.catch(error=>console.log(error))// con esto no se rompela aplicacion a pesar de que haya un error
+		//esto captura todo
   return(
-        <div >
-          
-          <Div />
-          <div className="contador">
-            <h3>{fecha}</h3> <br />
-            <div className="contador-btn">
-              <button onClick={ subtractCount }>👎</button>
-              <label>{ count }</label>
-              <button onClick = { handleCount }>👍</button>
-            </div>
-          
-          </div>
-          
-        </div>
-  ) 
+    <div>ItemListContainer</div>
+  
+  )
 }
 export default ItemListContainer
 

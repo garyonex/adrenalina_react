@@ -36,6 +36,7 @@
     transform: rotate(360deg);
   }
 } */
+/* RELACIONADO CON EL MENU */
 
 nav{
   display: flex;
@@ -60,8 +61,6 @@ nav ul li{
   list-style: none;
   text-decoration: none;
   padding: 20px;
-  
-
 }
 nav a{
   text-decoration: none;
@@ -100,12 +99,14 @@ body{
  background-color: rgba(206, 186, 216, 0.659);
 
 }
+
+/* RELACIONADO CON EL CONTADOR */
 .contador{
   padding: 20px;
   margin: 10px;
+  margin-top: -28px;
   display: flex;
   align-items: center;
-
 }
 .contador-btn{
   padding: 5px;
@@ -113,6 +114,7 @@ body{
   border: 1px solid rgba(255, 42, 42, 0.693) ;
   box-shadow: 10px 10px 10px -5px blueviolet;
   border-radius: 10px;
+  background-color: rgba(34, 158, 224, 0.439)
               
 }
 .contador-btn label {
@@ -122,4 +124,69 @@ body{
   padding: 5px;
   margin: 2px;
   font-size: 20px;
+}
+
+/* Refente a las card de productos */
+.contenedor-card{
+  display: flex;
+  /* flex-direction: row; */
+  flex-flow: row wrap;
+  justify-content: space-evenly;  
+  text-align: center;
+  margin: 50px;
+  margin-top: 10px;
+  
+}
+.card{
+  
+  background-color: rgba(25, 223, 220, 0.296);
+  align-content: center;
+  justify-content: center;
+  border: 1px solid royalblue;
+  height: 490px;
+  width: 280px;
+  border-radius: 10px;
+}
+.card-body-img {
+  height: 250px;
+  width: 250px;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 10px;
+}
+.card-body-img:hover{
+  opacity: 0.7;
+}
+.card-description p{
+  margin-top: -3px;
+  color: black;
+  font-size: 20px;
+  
+}
+.card-btn{
+  background-color: rgba(26, 159, 207, 0.357);
+  border-radius: 10px;
+  margin-top: -10px;
+}
+.card-btn:hover{
+  background-color: rgba(52, 20, 128, 0.419);
+}
+.card-header{
+  
+  font-size: 30px;
+  background-color: rgb(25, 113, 190);
+  margin: 8px;
+  padding: 2px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 800px){
+  .contenedor-card{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-top: auto;
+  }
 }
