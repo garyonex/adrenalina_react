@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+import Item from "../components/item/Item";
+import ItemList from "../components/itemList/ItemList";
 import { getFetch } from "../helpers/getFetch";
+import Greeting from "./Greeting";
 import ItemCount from "./ItemCount";
 
 
@@ -22,36 +25,16 @@ export default function ItemPromise (){
     console.log(muestra) 
     
     return (
-        <div className="contenedor-card">
-
-            { loading ? <h1>CARGANDO...</h1>
-            :
-            muestra.map((prod)=><div
-            key={prod.id}
-            className="contenedor-card"
-            >
-                <div className="card">
-                    <div className="card-header">
-                        {`${prod.name}-${prod.categoria}`}
-                    </div>
-                    <div className="card-body">
-                        <img src={prod.foto} alt="" className="card-body-img" />
-                    </div>
-                    <div className="card-description">
-                        <p>
-                            {`Precio: $ ${prod.price} \n 
-                            Stock: ${prod.Stock}`}
-                        </p>
-                    </div>
-                    <div className="card-footer">
-                        <ItemCount className="card-btn"
-                        inicial= {1} stock={prod.Stock}/>
-                    </div>
-
-                </div>
-
-            </div>)}
-        </div>
+       <div>
+           <Greeting saludo={'Soy ItemPromise'}/>
+            <div className="contenedor-card">
+                
+                { loading ? <h1>CARGANDO...</h1>
+                :   
+                <ItemList muestra={muestra} />
+                }
+            </div>
+       </div>
     )
 }
 
