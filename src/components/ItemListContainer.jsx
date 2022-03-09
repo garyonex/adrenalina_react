@@ -1,40 +1,32 @@
-export default function ItemListContainer (){
-    
-    const Productos = [
-        {id: '1', name: 'Botella', description: 'Roja', Stock: 10},
-        {id: '2', name: 'Televisor', description: 'Plasma', Stock: 15},
-        {id: '3', name: 'Compu', description: 'Verde', Stock: 100},
-    ]
-    
-    const task = new Promise((resolve,reject)=>{
-    //     let url = Productos
-    //     if(url === Productos){
-            // setTimeout(()=>{
-            //   resolve('Productos')
-            // },3000)
-    //     }else{
-    //         reject('400 not found')
-    //     }
-    // },setTimeout(3000))
-    // task
-    // .then((resp)=>console.log(resp))
-    // .catch(error=>console.log(error))
-    resolve(Productos)
-    });
-    setTimeout(()=>{
-        task
-        .then((respuesta)=>{
-            console.table(respuesta);
+import { useState } from 'react'
 
-        })
-        .catch((error)=>{
-            console.log('Hay un error');
-        })
-    },3000)
 
-    return (
-        <div> Prueba clase Promesas</div>
-    )
+const task = new Promise((resolve, reject)=>{
+  //tareas que realizaremos
+  // console.log('hola soy promesa');
+  let url = 'gary.com'
+  if(url === 'gary.com'){
+    resolve('200 ok')
+  }else{
+    reject('400 not found')
+  }
+  
+})
+
+function ItemListContainer () {
+//   console.log(task);
+	task
+	.then((respuesta)=>{
+	throw new Error('Esto es un error')// esto es un error de 'codigo' aunque este resuelto
+	console.log(respuesta)}, 
+		// (error)=>console.log(error)
+	)
+	.catch(error=>console.log(error))// con esto no se rompela aplicacion a pesar de que haya un error
+		//esto captura todo
+  return(
+    <div>ItemListContainer</div>
+  
+  )
 }
-
+export default ItemListContainer
 

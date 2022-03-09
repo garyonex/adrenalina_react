@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Div from '../components/Div';
 
+
 function ItemCount ({inicial, stock, div}) {
   const [count , setCount] = useState(inicial)
   const [fecha, setFecha] = useState(Date()) // Esto para darle una forma persistente
