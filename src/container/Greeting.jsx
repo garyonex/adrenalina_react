@@ -1,7 +1,7 @@
 const Greeting = ({saludo}) =>{
 
     return(
-     <h1>{saludo}</h1>
+     <h4 className="saludo">{saludo}</h4>
     )
 }
 export default Greeting

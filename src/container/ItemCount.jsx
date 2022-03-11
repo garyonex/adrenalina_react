@@ -26,17 +26,17 @@ function ItemCount ({inicial, stock, div}) {
     // contador += 1 => contador = contador + 1 ( es igual )
     // console.log(contado
     // setFecha(Date())
-    if( count < stock){
-      setCount(count + 1);
-    }
- 
+        if( count < stock){
+          setCount(count + 1);
+        }
+    
   }
 
   const subtractCount = () =>{
     
-    if( count > inicial){
-      setCount(count - 1)
-    }
+        if( count > inicial){
+          setCount(count - 1)
+        }
  
   }
   // console.log(array);
@@ -50,9 +50,9 @@ function ItemCount ({inicial, stock, div}) {
             {/* <Div /> */}
             <div className="contador">
               <div className="contador-btn">
-                <button onClick={subtractCount}>👎</button>
+                <button onClick={subtractCount}>🔻</button>
                 <label>{ count }</label>
-                <button onClick = {handleCount}>👍</button>
+                <button onClick = {handleCount}>🔺</button>
                 <button onClick={onAdd}>AGREGAR</button>
                 {/* <button onClick={()=>setBool(!bool)}>Boleano</button> */}
               </div>
