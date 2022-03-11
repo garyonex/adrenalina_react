@@ -190,3 +190,8 @@ body{
     margin-top: auto;
   }
 }
+
+.saludo{
+  text-align: center;
+  justify-content: center;
+}

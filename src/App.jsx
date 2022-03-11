@@ -7,6 +7,8 @@ import Div from './components/Div';
 import ItemCount from './container/ItemCount';
 import ItemListContainer from './components/ItemListContainer';
 import ItemPromise from './container/ItemPromise';
+import ItemDetail from './components/itemDetail/ItemDetail';
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 
 
 
@@ -40,6 +42,8 @@ function App() //componente
         </div>
           {/* <ItemListContainer/> */}
           <ItemPromise />
+          {/* <ItemDetail/> */}
+          <ItemDetailContainer/>
       </div>
     
     
