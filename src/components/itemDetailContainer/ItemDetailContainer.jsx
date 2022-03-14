@@ -3,9 +3,9 @@ import ItemDetail from '../itemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
     //Llamada a la api
-    const [poke, setPoke] = useState([])
+    const [detail, setDetail] = useState([])
     const [cargando, setCargando] = useState(true)
-    const url = `https://api.mercadolibre.com/sites/MLA/search?q=nike&limit=3`
+    const url = `https://api.mercadolibre.com/sites/MLA/search?q=cubosrubik&limit=1`
     
     useEffect(()=>{
             
@@ -14,12 +14,12 @@ const ItemDetailContainer = () => {
             fetch(url)
             .then((resu)=> resu.json())
             .then((resu)=> {
-                setPoke(resu.results)
+                setDetail(resu.results)
                 console.log(resu.results);
             })
 
             .catch((error => 
-                console.log('Exixte un error', error)
+                console.log('Existe un error', error)
             ))
         
             .finally(()=>
@@ -28,10 +28,10 @@ const ItemDetailContainer = () => {
 
         }, 5000);
     },[])
-    console.log(poke);
+    console.log(detail);
   return (
     <>
-        <ItemDetail producto ={poke}/>
+        <ItemDetail producto ={detail}/>
     </>
   )
 }

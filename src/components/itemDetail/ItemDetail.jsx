@@ -8,28 +8,36 @@ const ItemDetail = ({producto}) => {
       <div>
          <Greeting saludo={'Soy itemDetail'} />
 
-            <div className="contenedor-card">
+            <div className="contenedor-item">
                 {producto.map((e,id)=>{
                     return(
                         <div
                         key={id}
                         // className="contenedor-card"
                         >
-                            <div className="card">
-                                <div className="card-header">
-                                    {`${e.title}-${e.condition}`}
+                            <div className="item">
                                 </div>
-                                <div className="card-body">
-                                    <img src={e.thumbnail} alt="" className="card-body-img" />
+                                <div className="item-body">
+                                    <img src={e.thumbnail} alt="" className="item-body-img" />
                                 </div>
-                                <div className="card-description">
-                                    <p>
-                                        {`Precio: $ ${e.price} \n 
-                                        Stock: ${e.available_quantity}`}
-                                    </p>
-                                </div>
-                                <div className="card-footer">
-                                    <ItemCount className="card-btn"
+                                    <div className="item-header">
+                                        <p>
+                                        {`${e.title} -\n 
+                                        ${e.condition}`} <br />
+                                       </p>
+                                       <p>
+                                        {`${e.address.state_name}`}
+                                       </p>
+                                       <p>
+                                            {`Precio: $ ${e.price}
+                                           `}
+                                        </p>
+                                        <p className='item-stock'>
+                                            {`Stock: ${e.available_quantity}`}
+                                        </p>
+                                       
+                                <div className="item-footer">
+                                    <ItemCount className="item-btn"
                                     inicial= {1} stock={e.available_quantity}/>
                                 </div>
                         

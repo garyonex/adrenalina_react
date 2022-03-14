@@ -44,8 +44,9 @@ nav{
   justify-content: space-between;
   align-content: center;
   padding: 16px;
-  background-color: #045ce9e5;
-  margin: -20px;
+  margin: -18px;
+  background-color: #bf033b4a;
+  background-image: linear-gradient(315deg, #bf033b6b 0%, #ffc51959 74%);
 }
 
 nav ul{
@@ -84,10 +85,9 @@ nav ul li img{
   padding: 16px;
   text-align: center;
   font-size: 5em;
-  background-color: #045de9;
-  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
-
+  background-color: transparent ;
 }
+
 .botonComprar{
   margin-right: 40px;
 }
@@ -95,10 +95,16 @@ nav ul li img{
   margin-top: 5px;
   margin-bottom: 5px;
 }
+/* CUERPO - IMAGEN FONDO */
 body{
- background-color: rgba(206, 186, 216, 0.659);
+ background-color: rgba(111, 105, 114, 0.213);
+ background-image: url(./components/imagenes/2937.jpg);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
 
 }
+
 
 /* RELACIONADO CON EL CONTADOR */
 .contador{
@@ -115,6 +121,7 @@ body{
   box-shadow: 10px 10px 10px -5px blueviolet;
   border-radius: 10px;
   background-color: rgba(34, 158, 224, 0.439)
+  
               
 }
 .contador-btn label {
@@ -124,6 +131,18 @@ body{
   padding: 5px;
   margin: 2px;
   font-size: 20px;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(21, 147, 231, 0.145),rgba(231, 21, 21, 0.289) );
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position-x: right;
+  transition: background-size 500ms;
+}
+.contador-btn button:hover{
+  background-color: rgba(233, 232, 242, 0.412);
+  color: rgba(230, 222, 10, 0.652);
+  background-position-x: left;
+  background-size: 100% 100%;
 }
 
 /* Refente a las card de productos */
@@ -139,7 +158,7 @@ body{
 }
 .card{
   
-  background-color: rgba(25, 223, 220, 0.296);
+  background-color: rgba(4, 11, 48, 0.412);
   align-content: center;
   justify-content: center;
   border: 1px solid royalblue;
@@ -194,4 +213,70 @@ body{
 .saludo{
   text-align: center;
   justify-content: center;
+}
+/* RELACIONADO CON ITEM/DETALLE */
+.contenedor-item{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;  
+  text-align: center;
+  margin: 50px;
+
+}
+
+.item-body-img{
+  height:320px ;
+  width: 360px;
+  border-radius: 10px;
+  float: left;
+  margin-right: 80px;
+  margin-top: 3em;
+}
+.item-body-img:hover{
+  opacity: 0.7;
+}
+.item-header{
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  color: rgb(255, 255, 255);
+  border: solid 1px red ;
+  border-radius: 10px;
+  height: 23.5rem;
+  margin-left: 28rem;
+  font-size: 20px;
+  background-color: rgba(83, 93, 238, 0.152);
+  height: 320px;
+  width: 370px;
+  margin-top: 2.5em;
+}
+
+.item-footer{
+  margin-top: 1em;
+ align-content: center;
+}
+.item-stock{
+  font-weight: bold;
+  color: rgba(251, 255, 0, 0.522);
+}
+
+/* RELACIONADO CON EL FOOTER */
+
+footer{
+  font-size: 30px;
+  justify-content: center;
+  text-align: center;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  text-decoration: none;
+}
+footer a {
+  text-decoration: none;
+}
+footer a:hover{
+  text-decoration: none;
+  color: rgba(13, 187, 187, 0.234);
+}
+footer a:visited{
+  color:aqua ;
 }
