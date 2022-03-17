@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import Item from "../components/item/Item";
 import ItemDetail from "../components/itemDetail/ItemDetail";
 import ItemList from "../components/itemList/ItemList";
@@ -10,7 +11,9 @@ import ItemCount from "./ItemCount";
 export default function ItemPromise (){
     const [muestra, setMuestra] = useState([])// el array basio es para iniciarlo
     const [loading, setLoading] = useState(true)//tiene que ser un dato boleano
+    const {detalleId} = useParams()
     useEffect(() => {
+        
         getFetch // llamada a la api
         .then((resp)=>{
             setMuestra(resp);
@@ -47,14 +50,17 @@ export default function ItemPromise (){
     return (
        <div>
           
-           <Greeting saludo={'Soy ItemPromise'}/>
+            <Greeting saludo={'Soy ItemPromise'}/>
             <div className="contenedor-card">
                 
                 { loading ? <h1>CARGANDO...</h1>
                 :   
                 <ItemList muestra={muestra} />
+                 
                 }
             </div>
+                
+        
        </div>
     )
 }

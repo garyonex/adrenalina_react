@@ -3,12 +3,12 @@ import TituloApp from './components/tituloApp';
 import NavBarApp from './components/navBar';
 import ComponenteClase from './ComponenteClase';
 import Greeting from './container/Greeting';
-import Div from './components/Div';
-import ItemCount from './container/ItemCount';
-import ItemListContainer from './components/ItemListContainer';
+import Item from './components/item/Item'
 import ItemPromise from './container/ItemPromise';
-import ItemDetail from './components/itemDetail/ItemDetail';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import ItemDetail from './components/itemDetail/ItemDetail';
+import Cart from './components/Cart';
 
 
 
@@ -20,31 +20,27 @@ function App() //componente
     const saludo = ()=> {'hola'}
     
   return (
-    
-    
-      <div 
-          className ='App'
+      <BrowserRouter>
+      
+        <div 
+            className ='App'
+        > 
+        <img src="" alt="" />
+          <NavBarApp />
+         <Routes>
+            <Route path='/' element={<ItemPromise />} />
+            <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+            {/* asociamos cada elemento */}
+            <Route path='/*' element={ <Navigate To='/' replace />}/>
+            {/* le decimos que cualquier otra ruta a las NO especificadas me redireccione al home */}
 
-      > <img src="" alt="" />
-        <NavBarApp />
-          <TituloApp />
-          <img src="" alt=""  />
-          <TituloApp />
-          {/* <InputApp /> */}
-              hola soy app 
-            <ComponenteClase />
-            <Greeting saludo ='soy un saludito'/>
-            
-        <div>
-          {/* Contador items/ Btn Agregar */}
-            {/* <ItemCount inicial ={1} stock={10} div ={ Div }/> */}
-  
+         </Routes>
+         {/* <ItemDetailContainer /> */}
+         
         </div>
-          {/* <ItemListContainer/> */}
-          <ItemPromise />
-          {/* <ItemDetail/> */}
-          <ItemDetailContainer/>
-      </div>
+      </BrowserRouter>
+    
     
     
    

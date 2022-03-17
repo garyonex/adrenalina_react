@@ -1,5 +1,6 @@
 import React from 'react'
-import ItemCount from '../../container/ItemCount'
+import { Link } from 'react-router-dom'
+
 
 function Item({prod}) {
   return (
@@ -21,10 +22,16 @@ function Item({prod}) {
                 </p>
             </div>
             <div className="card-footer">
-                <ItemCount className="card-btn"
-                inicial= {1} stock={prod.Stock}/>
+                {/* <ItemCount className="card-btn"
+                inicial= {1} stock={prod.Stock}/> */}
             </div>
-    
+            <Link to={`detalle/${prod.id}`}>
+              
+              <div className='contador-btn'>
+
+                    <button >Detalle Producto</button>
+              </div>
+            </Link>
         </div>
 
     </div>
