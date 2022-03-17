@@ -44,7 +44,7 @@ function ItemCount ({inicial, stock, div}) {
     return console.log(count);
   }
 
-  console.log('item count 3');
+  // console.log('item count 3');
   return(
         <div >
             {/* <Div /> */}
@@ -54,6 +54,7 @@ function ItemCount ({inicial, stock, div}) {
                 <label>{ count }</label>
                 <button onClick = {handleCount}>🔺</button>
                 <button onClick={onAdd}>AGREGAR</button>
+                
                 {/* <button onClick={()=>setBool(!bool)}>Boleano</button> */}
               </div>
             </div>

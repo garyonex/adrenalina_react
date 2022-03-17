@@ -1,51 +1,54 @@
 import ItemCount from '../../container/ItemCount'
 import Greeting from "../../container/Greeting";
+import { Link, useParams } from 'react-router-dom';
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({detail}) => {
   
 
+
   return (
+
       <div>
          <Greeting saludo={'Soy itemDetail'} />
 
             <div className="contenedor-item">
-                {producto.map((e,id)=>{
-                    return(
                         <div
-                        key={id}
+                        key={detail.id}
                         // className="contenedor-card"
                         >
                             <div className="item">
                                 </div>
                                 <div className="item-body">
-                                    <img src={e.thumbnail} alt="" className="item-body-img" />
+                                    <img src={detail.foto} alt={detail.name} className="item-body-img" />
                                 </div>
                                     <div className="item-header">
                                         <p>
-                                        {`${e.title} -\n 
-                                        ${e.condition}`} <br />
+                                            {`${detail.name} -\n 
+                                            ${detail.condition}`} <br />
                                        </p>
                                        <p>
-                                        {`${e.address.state_name}`}
+                                           {`${detail.description}`}
                                        </p>
                                        <p>
-                                            {`Precio: $ ${e.price}
+                                          {`${detail.address}`}
+                                       </p>
+                                       <p>
+                                            {`Precio: $ ${detail.price}
                                            `}
                                         </p>
                                         <p className='item-stock'>
-                                            {`Stock: ${e.available_quantity}`}
+                                            {`Stock: ${detail.Stock}`}
                                         </p>
                                        
-                                <div className="item-footer">
+                                {/* <div className="item-footer">
                                     <ItemCount className="item-btn"
-                                    inicial= {1} stock={e.available_quantity}/>
-                                </div>
+                                    inicial= {1} stock={detail.Stock}/>
+                       
+                                </div> */}
                         
                             </div>
                     
                         </div>
-                    )
-                })}
             </div>       
       </div>
   )
