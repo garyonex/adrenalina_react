@@ -162,8 +162,8 @@ body{
   align-content: center;
   justify-content: center;
   border: 1px solid royalblue;
-  height: 490px;
-  width: 280px;
+  height: 540px;
+  width: 320px;
   border-radius: 10px;
 }
 .card-body-img {
@@ -211,6 +211,7 @@ body{
 }
 
 .saludo{
+  color:tomato;
   text-align: center;
   justify-content: center;
 }
@@ -284,4 +285,14 @@ footer a:hover{
 }
 footer a:visited{
   color:aqua ;
+}
+
+/* RELACIONADO CARRITO DE COMPRA */
+
+.carrito_compra{
+  color: tomato;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 10em;
 }
