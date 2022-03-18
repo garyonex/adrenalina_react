@@ -1,31 +1,45 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
-import Item from "../components/item/Item";
-import ItemDetail from "../components/itemDetail/ItemDetail";
+import { NavLink, useParams } from "react-router-dom";m
 import ItemList from "../components/itemList/ItemList";
 import { getFetch } from "../helpers/getFetch";
 import Greeting from "./Greeting";
-import ItemCount from "./ItemCount";
+
 
 
 export default function ItemPromise (){
     const [muestra, setMuestra] = useState([])// el array basio es para iniciarlo
     const [loading, setLoading] = useState(true)//tiene que ser un dato boleano
-    const {detalleId} = useParams()
+    const {categoriaId} = useParams()
+
     useEffect(() => {
-        
-        getFetch // llamada a la api
-        .then((resp)=>{
-            setMuestra(resp);
-        })
-        .catch((error=>
-            console.log('Existe un error', error)
-            ))
-            .finally(()=>{
-                setLoading(false);
-            })
-        }, [])
-        console.log(muestra) 
+            if (categoriaId) {
+                getFetch // llamada a la api
+                .then((resp)=>{
+                    setMuestra(resp.filter(pro => pro.categoria === categoriaId));
+                })
+                .catch((error=>
+                    console.log('Existe un error', error)
+                    ))
+                    .finally(()=>{
+                        setLoading(false);
+                    })
+            }else{
+
+                getFetch // llamada a la api
+                .then((resp)=>{
+                    setMuestra(resp);
+                })
+                .catch((error=>
+                    console.log('Existe un error', error)
+                    ))
+                    .finally(()=>{
+                        setLoading(false);
+                    })
+            }
+
+        }, [categoriaId]) 
+        // console.log(muestra) 
+        // console.log(categoriaId)
         
     // useEffect(() => {
     //     let url = './assets/DATA.json' 

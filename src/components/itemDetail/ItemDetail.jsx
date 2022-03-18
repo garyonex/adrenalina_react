@@ -1,10 +1,8 @@
 import ItemCount from '../../container/ItemCount'
 import Greeting from "../../container/Greeting";
-import { Link, useParams } from 'react-router-dom';
 
 const ItemDetail = ({detail}) => {
-  
-
+        
 
   return (
 
@@ -30,7 +28,7 @@ const ItemDetail = ({detail}) => {
                                            {`${detail.description}`}
                                        </p>
                                        <p>
-                                          {`${detail.address}`}
+                                          {`Zona: ${detail.address}`}
                                        </p>
                                        <p>
                                             {`Precio: $ ${detail.price}
@@ -40,11 +38,11 @@ const ItemDetail = ({detail}) => {
                                             {`Stock: ${detail.Stock}`}
                                         </p>
                                        
-                                {/* <div className="item-footer">
+                                <div className="item-footer">
                                     <ItemCount className="item-btn"
                                     inicial= {1} stock={detail.Stock}/>
                        
-                                </div> */}
+                                </div>
                         
                             </div>
                     

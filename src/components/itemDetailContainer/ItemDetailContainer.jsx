@@ -7,6 +7,9 @@ const ItemDetailContainer = () => {
    
     const [detail, setDetail] = useState({})
     const [cargando, setCargando] = useState(true)
+    const{ detalleId} = useParams()
+    //devulve solo en string PENDINETE
+    console.log(detalleId)
      //Llamada a la api
     // const url = `https://api.mercadolibre.com/sites/MLA/search?q=cubosrubik&limit=6`
     
@@ -15,7 +18,7 @@ const ItemDetailContainer = () => {
         setTimeout(() => {
             
             getFetch
-            .then(resu => setDetail(resu.find(prod => prod.id === 4)))
+            .then(resu => setDetail(resu.find(prod => prod.id === detalleId)))
             
             //find paraque devuelva un solo producto
             
