@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({detail}) => {
-   const [cambia, setCambia] = useState(null)
+   const [cambia, setCambia] = useState(false)
     const onAdd = cant => {
         console.log(cant);
         setCambia(cant)
@@ -50,12 +50,13 @@ const ItemDetail = ({detail}) => {
                                 <div className="item-footer">
                                     { cambia ?
                                     <Link to="/cart">
-                                        <button>ir al cart</button>
+                                        <div className='contador-btn'>
+                                            <button>Ir al Carrito</button>
+                                        </div>
                                     </Link>
                                     :
                                     <ItemCount
-                                    inicial= {1} stock={detail.Stock} onAgg={onAdd}>
-                                
+                                    inicial= {1} stock={detail.Stock} onAdd={onAdd}>
                                     </ItemCount>
                                     }
                                   
