@@ -296,3 +296,16 @@ footer a:visited{
   text-align: center;
   font-size: 10em;
 }
+
+/* RELACIONADO AL INPUT */
+
+.container-input{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px yellowgreen;
+  margin: 10px;
+}
+.container-input input {
+  font-size: 2em;
+}

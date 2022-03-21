@@ -43,7 +43,7 @@ const ItemDetailContainer = () => {
   return (
     <>
         
-        <NavLink to="detalle">
+        
             <div className='contenedor-item'>
                 {
                     cargando ? <h1>ESPERE PORFAVOR ...</h1>
@@ -51,7 +51,7 @@ const ItemDetailContainer = () => {
                 <ItemDetail detail ={detail} />
                 }
             </div>
-        </NavLink>
+        
     </>
   )
 }

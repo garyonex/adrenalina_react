@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Div from '../components/Div';
 
 
-function ItemCount ({inicial, stock, div}) {
+function ItemCount ({inicial, stock,agg}) {
   const [count , setCount] = useState(inicial)
   const [fecha, setFecha] = useState(Date()) // Esto para darle una forma persistente
   
@@ -40,7 +40,7 @@ function ItemCount ({inicial, stock, div}) {
  
   }
   // console.log(array);
-  function onAdd() {
+ const onAgg =() =>{
     return console.log(count);
   }
 
@@ -53,7 +53,7 @@ function ItemCount ({inicial, stock, div}) {
                 <button onClick={subtractCount}>🔻</button>
                 <label>{ count }</label>
                 <button onClick = {handleCount}>🔺</button>
-                <button onClick={onAdd}>AGREGAR</button>
+                <button onClick={onAgg}>AGREGAR</button>
                 
                 {/* <button onClick={()=>setBool(!bool)}>Boleano</button> */}
               </div>

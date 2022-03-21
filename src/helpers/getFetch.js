@@ -16,6 +16,9 @@ const muestra = [
     {id: '8', condition:'new',description:'Celulares para Tirar', address: 'CABA', name: 'Celular',categoria:'Tirar', price:400, foto:'https://static.vecteezy.com/system/resources/thumbnails/000/420/259/small/Multimedia__282_29.jpg', Stock: 1000},
 
     {id: '9', condition:'new',description:'Automovil para destrozar', address: 'CABA', name: 'Automovil',categoria:'Golpear', price:45000, foto:'https://static.vecteezy.com/system/resources/thumbnails/000/581/900/small/icon0-vector-934-01.jpg', Stock: 2},
+
+    {id: '10', condition:'new',description:'Mamenulo + protectores', address: 'CABA', name: 'Proteccion',categoria:'Protectores', price:100, foto:'https://thumbs.dreamstime.com/z/seguridad-industrial-y-equipo-protector-para-el-illustra-del-trabajador-131042983.jpg', Stock: 6},
+
     
 ]
 

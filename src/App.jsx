@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemDetail from './components/itemDetail/ItemDetail';
 import Cart from './components/carrito/Cart';
 import ImagenContainer from './components/ImagenContainer';
+import InputApp from './components/input/InputApp';
 
 
 
@@ -24,12 +25,13 @@ function App() //componente
     
   return (
       <BrowserRouter>
-      
+
         <div 
             className ='App'
         > 
         <img src="" alt="" />
           <NavBarApp />
+        
          <Routes>
             <Route path='/' element={<ItemPromise />} />
             <Route path='/categoria/:categoriaId' element={<ItemPromise />} />

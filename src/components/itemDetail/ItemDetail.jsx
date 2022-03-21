@@ -1,12 +1,21 @@
 import ItemCount from '../../container/ItemCount'
 import Greeting from "../../container/Greeting";
+import { Intercambiabilidad } from '../intercambio/Intercambiabilidad';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+
 
 const ItemDetail = ({detail}) => {
-        
-
+   const [cambia, setCambia] = useState(null)
+    const onAdd = cant => {
+        console.log(cant);
+        setCambia(cant)
+    }
   return (
 
       <div>
+     
          <Greeting saludo={'Soy itemDetail'} />
 
             <div className="contenedor-item">
@@ -39,9 +48,17 @@ const ItemDetail = ({detail}) => {
                                         </p>
                                        
                                 <div className="item-footer">
-                                    <ItemCount className="item-btn"
-                                    inicial= {1} stock={detail.Stock}/>
-                       
+                                    { cambia ?
+                                    <Link to="/cart">
+                                        <button>ir al cart</button>
+                                    </Link>
+                                    :
+                                    <ItemCount
+                                    inicial= {1} stock={detail.Stock} onAgg={onAdd}>
+                                
+                                    </ItemCount>
+                                    }
+                                  
                                 </div>
                         
                             </div>
