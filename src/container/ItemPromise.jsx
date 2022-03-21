@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";m
+import { NavLink, useParams } from "react-router-dom";
 import ItemList from "../components/itemList/ItemList";
 import { getFetch } from "../helpers/getFetch";
 import Greeting from "./Greeting";

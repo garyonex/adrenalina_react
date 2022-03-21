@@ -23,6 +23,7 @@ const NavBar = (saludo)=>{
                                 <li><NavLink to="categoria/Romper">Romper</NavLink></li>
                                  <li><NavLink to="categoria/Golpear">Golpear</NavLink></li>
                                  <li><NavLink to="categoria/Tirar">Tirar</NavLink></li>
+                                 <li><NavLink to="categoria/Protectores">Proteccion</NavLink></li>
                             {/* <li><NavLink to="/referencias">Referencias</NavLink></li>
                             <li><NavLink to ="/nosotros">Quienes Somos</NavLink></li>
                             <li><NavLink to="/contacto">Contacto</NavLink></li> */}
