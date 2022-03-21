@@ -178,9 +178,10 @@ body{
 }
 .card-description p{
   margin-top: -3px;
-  color: black;
+  color: white;
   font-size: 20px;
-  
+ 
+
 }
 .card-btn{
   background-color: rgba(26, 159, 207, 0.357);
