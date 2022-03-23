@@ -289,13 +289,62 @@ footer a:visited{
 }
 
 /* RELACIONADO CARRITO DE COMPRA */
+.carrito button{
+  padding: 10px;
+  margin: 10px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.carrito button:hover{
+  background-color: rgba(255, 255, 255, 0.734);
+}
 
-.carrito_compra{
+.carrito-titulo h1{
   color: tomato;
   justify-content: center;
   align-content: center;
   text-align: center;
-  font-size: 10em;
+  font-size: 8em;
+  align-items: center;
+}
+.carrito-titulo p{
+  font-size: 30px;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  color: wheat;
+}
+.carrito-items{
+  justify-content: center;
+  align-content: center;
+  font-size: 30px;
+  color: rgb(253, 251, 251);
+  border: solid 1px sandybrown;
+  border-radius: 10px 40px;
+  list-style: none;
+  padding: 10px;
+  margin: 15px;
+  background-color: rgba(17, 127, 230, 0.419);
+
+}
+.carrito-items img{
+  border-radius: 10px;
+  height: 80px;
+  width: 80px;
+
+}
+.carrito-detalle{
+  color: white;
+  align-content: center;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  /* flex-direction: row; */
+  flex-flow: row wrap;
+  justify-content: space-evenly;  
+  text-align: center;
+  margin: 50px;
+  margin-top: 10px;
 }
 
 /* RELACIONADO AL INPUT */

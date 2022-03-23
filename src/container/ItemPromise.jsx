@@ -10,6 +10,7 @@ export default function ItemPromise (){
     const [muestra, setMuestra] = useState([])// el array basio es para iniciarlo
     const [loading, setLoading] = useState(true)//tiene que ser un dato boleano
     const {categoriaId} = useParams()
+    
 
     useEffect(() => {
             if (categoriaId) {

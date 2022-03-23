@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ItemCount from '../../container/ItemCount'
-
+import { useCartContext } from '../../context/CartContext'
 
 function Item({prod}) {
+    const [cambia, setCambia] = useState(false)
+    const {agregarCart, cartList, enCart} = useCartContext()
+    const onAdd = cant => {
+        console.log(cant);
+        setCambia(cant)
+        agregarCart({ ...prod, cantidad: cant})
+    
+    }
   return (
     <div
     key={prod.id}
@@ -23,8 +31,7 @@ function Item({prod}) {
                 </p>
             </div>
             <div className="card-footer">
-                {/* <ItemCount className="card-btn"
-                inicial= {1} stock={prod.Stock}/> */}
+             
             </div>
             <Link to={`detalle/${prod.id}`}>
               
@@ -32,7 +39,16 @@ function Item({prod}) {
                     <button >Detalle Producto</button>
               </div>
             </Link>
-            <ItemCount inicial={1} stock={prod.Stock} />
+            { enCart(prod.id) ?
+            <Link to="/cart">
+                <div className='contador-btn'>
+                    <button> Ir al Carrito</button>
+                </div>
+            </Link>
+            :
+            <ItemCount inicial={1} stock={prod.Stock} onAdd={onAdd} />
+            }
+            
         </div>
 
     </div>
