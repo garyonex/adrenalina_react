@@ -3,15 +3,21 @@ import Greeting from "../../container/Greeting";
 import { Intercambiabilidad } from '../intercambio/Intercambiabilidad';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext';
 
 
 
 const ItemDetail = ({detail}) => {
    const [cambia, setCambia] = useState(false)
+   const {agregarCart, cartList, enCart} = useCartContext()
     const onAdd = cant => {
         console.log(cant);
         setCambia(cant)
+        agregarCart({ ...detail, cantidad: cant})
+        
+        
     }
+    console.log(cartList);// esto muestra que es lo que se esta agregando
   return (
 
       <div>
@@ -48,7 +54,7 @@ const ItemDetail = ({detail}) => {
                                         </p>
                                        
                                 <div className="item-footer">
-                                    { cambia ?
+                                    { enCart(detail.id)?
                                     <Link to="/cart">
                                         <div className='contador-btn'>
                                             <button>Ir al Carrito</button>
