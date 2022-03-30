@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
-import { getFetch } from '../helpers/getFetch'
+
 
 
 export const useCartContext = ()=> useContext(CartContext) // para exportar mas facilen una sola linea y arrojar solo lo que quiero
@@ -19,14 +19,17 @@ export function CartContextProvider({children}) {
     const vaciarCart =()=>{
         setCartList([])
     }
-   
-  
+    const eliminar = (id) =>{
+       return setCartList(cartList.filter((item)=>item.id !== id))
+    }
+
   return (
     <CartContext.Provider value={{
         cartList,
         agregarCart,
         vaciarCart,
         enCart,
+        eliminar
       
         
         

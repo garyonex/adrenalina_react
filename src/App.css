@@ -37,7 +37,29 @@
   }
 } */
 /* RELACIONADO CON EL MENU */
-
+.contenedor-img-cart{
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  
+}
+.imagen-container{
+  height:60px;
+  width:60px ;
+  border-radius: 10px;
+  background-color: transparent ;
+}
+.imagen-container_ctn{
+  background-color: red;
+  width: 1em;
+  height: 1em;
+  margin:auto;
+  margin-top: 3px;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 20px;
+ 
+}
 nav{
   display: flex;
   flex-direction: row;
@@ -90,6 +112,7 @@ nav ul li img{
 
 .botonComprar{
   margin-right: 40px;
+  border-radius: 10px;
 }
 .titulo-header{
   margin-top: 5px;
@@ -346,6 +369,14 @@ footer a:visited{
   margin: 50px;
   margin-top: 10px;
 }
+.carrito-elimi button{
+  background-color: transparent;
+}
+.carrito-elimi img{
+  background-color: transparent;
+  height: 26px;
+  width: 26px;
+}
 
 /* RELACIONADO AL INPUT */
 
@@ -358,4 +389,16 @@ footer a:visited{
 }
 .container-input input {
   font-size: 2em;
+}
+
+/* PRUEBA DE COMPONENTES */
+
+.btnUno{
+  background-color: aqua;
+}
+.btnDos{
+  background-color: tomato;
+}
+.btnTres{
+  background-color: yellowgreen;
 }

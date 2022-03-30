@@ -57,7 +57,7 @@ const ItemDetail = ({detail}) => {
                                     { enCart(detail.id)?
                                     <Link to="/cart">
                                         <div className='contador-btn'>
-                                            <button>Ir al Carrito</button>
+                                            <button>En carrito</button>
                                         </div>
                                     </Link>
                                     :
