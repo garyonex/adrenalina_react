@@ -1,10 +1,9 @@
-import Greeting from "../container/Greeting"
-
 import LogoContainer from "./logoContainer"
 import imagen from './imagenes/adrenalina.png'
 import TituloApp from "./tituloApp"
 import { Link, NavLink } from "react-router-dom"
 import ImagenContainer from "./ImagenContainer"
+
 
 const NavBar = (saludo)=>{
         return(
@@ -33,7 +32,7 @@ const NavBar = (saludo)=>{
                            <NavLink to="cart">
                         		<ImagenContainer/>
                            </NavLink>
-                           <br />Click</button>
+                        </button>
                     </nav>
                     
                 

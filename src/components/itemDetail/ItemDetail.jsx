@@ -10,6 +10,7 @@ import { useCartContext } from '../../context/CartContext';
 const ItemDetail = ({detail}) => {
    const [cambia, setCambia] = useState(false)
    const {agregarCart, cartList, enCart} = useCartContext()
+   
     const onAdd = cant => {
         console.log(cant);
         setCambia(cant)
@@ -57,7 +58,7 @@ const ItemDetail = ({detail}) => {
                                     { enCart(detail.id)?
                                     <Link to="/cart">
                                         <div className='contador-btn'>
-                                            <button>Ir al Carrito</button>
+                                            <button>En carrito</button>
                                         </div>
                                     </Link>
                                     :

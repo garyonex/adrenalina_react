@@ -36,7 +36,7 @@ function Item({prod}) {
             <Link to={`detalle/${prod.id}`}>
               
               <div className='contador-btn'>
-                    <button >Detalle Producto</button>
+                    <button>Detalle Producto</button>
               </div>
             </Link>
             { enCart(prod.id) ?

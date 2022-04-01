@@ -3,15 +3,15 @@ import NavBarApp from './components/navBar';
 import ItemPromise from './container/ItemPromise';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, Navigate,  } from 'react-router-dom';
-import ImagenContainer from './components/ImagenContainer';
-import {useState} from 'react';
 import React from 'react';
 import { CartContextProvider } from './context/CartContext';
 import Cart from './components/carrito/Cart';
+import { TextComponent2, TextComponent3, TextComponent4, TextComponent6, TextComponent7, TextComponet } from './components/condicionales/ComponentesCondicionales';
+import getFirestoreApp from './firebase/configFirebase';
+getFirestoreApp()
 
 
-
-
+	
 
 
 function App() //componente
@@ -47,7 +47,14 @@ function App() //componente
 			{/* <ItemDetailContainer /> */}
 			</div>
 		</BrowserRouter>
-     
+     <center>
+		 {/* <TextComponet/> */}
+		 {/* <TextComponent2/> */}
+		 {/* <TextComponent3/> */}
+		 {/* <TextComponent4/> */}
+		 {/* <TextComponent6 otro={"btnTres"}/> */}
+		 {/* <TextComponent7/> */}
+	 </center>
 	</CartContextProvider>
     
     
