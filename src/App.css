@@ -312,10 +312,19 @@ footer a:visited{
 }
 
 /* RELACIONADO CARRITO DE COMPRA */
+.carrito{
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+}
+.carrito-alert{
+  background-color: rgb(165, 216, 47);
+}
 .carrito button{
   padding: 10px;
-  margin: 10px;
-  font-size: 30px;
+  margin: 8px;
+  font-size: 20px;
   border-radius: 10px;
 }
 .carrito button:hover{
@@ -327,7 +336,7 @@ footer a:visited{
   justify-content: center;
   align-content: center;
   text-align: center;
-  font-size: 8em;
+  font-size: 5em;
   align-items: center;
 }
 .carrito-titulo p{

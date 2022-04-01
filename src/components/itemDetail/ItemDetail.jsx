@@ -10,6 +10,7 @@ import { useCartContext } from '../../context/CartContext';
 const ItemDetail = ({detail}) => {
    const [cambia, setCambia] = useState(false)
    const {agregarCart, cartList, enCart} = useCartContext()
+   
     const onAdd = cant => {
         console.log(cant);
         setCambia(cant)

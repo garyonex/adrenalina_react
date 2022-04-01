@@ -7,7 +7,8 @@ import React from 'react';
 import { CartContextProvider } from './context/CartContext';
 import Cart from './components/carrito/Cart';
 import { TextComponent2, TextComponent3, TextComponent4, TextComponent6, TextComponent7, TextComponet } from './components/condicionales/ComponentesCondicionales';
-
+import getFirestoreApp from './firebase/configFirebase';
+getFirestoreApp()
 
 
 	

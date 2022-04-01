@@ -30,8 +30,6 @@ export function CartContextProvider({children}) {
         vaciarCart,
         enCart,
         eliminar
-      
-        
         
     }}>
         {children}

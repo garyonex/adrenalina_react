@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 export const ControlledInput = () =>{
-    const [dataForm, setDataForm] = useState({texto : '', nonbre: ''})
+    const [dataForm, setDataForm] = useState({texto : '', nombre: ''})
     useEffect(() => {
       console.log('addEventlistener');
       return() => console.log('removeEventListener');
