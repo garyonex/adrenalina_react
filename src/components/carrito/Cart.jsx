@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom"
-import ItemCount from "../../container/ItemCount"
 import { useCartContext } from "../../context/CartContext"
-import FormularioContainer from "../formulario/FormularioContainer"
 import elimi from "../imagenes/1214428.png"
 import { addDoc, collection, getFirestore, updateDoc, doc, query, where, getDocs, writeBatch, documentId} from "firebase/firestore"
-import { async } from "@firebase/util"
 import { useState } from "react"
 
 export default function Cart() {
@@ -12,17 +9,14 @@ export default function Cart() {
   const [dataForm, setDataForm] = useState({
     name: '', email: '' , phone: ''
   })
-  const [id, setId] = useState('')
+  const [idOrden, setIdOrden] = useState('')
 
   const { cartList, vaciarCart, eliminar} = useCartContext()
-  console.log(cartList)
+  // console.log(cartList)
   const TotalPrice= cartList.reduce((acc, obj) => acc +(obj.price * obj.cantidad), 0)
-  const sumar = (e)=>{
-    if( e.cantidad < e.Stock){
-    return (e+ 1);
-    }
-  }
-  const crearOrden = async(e)=>{
+
+  const crearOrden = async (e)=>{
+    e.preventDefault()
     let orden = {}
     orden.buyer = dataForm
     orden.items = cartList.map(cartItem =>{
@@ -38,7 +32,7 @@ export default function Cart() {
     const db = getFirestore()
     const queryCollectionSet = collection(db, 'ordenes')
     addDoc(queryCollectionSet, orden)
-    .then(e => setId(e.id))
+    .then(resp => setIdOrden(resp.id))
     .cath(err=> console.error(err))
     .finally(()=>console.log('termino'))
     
@@ -62,13 +56,14 @@ export default function Cart() {
     batch.commit()
   }
   const handleOnChange= (e) =>{
-    console.log(e.target.name)
-    console.log(e.target.value)
-    setDataForm({
-        ...dataForm,
-        [e.target.name]: e.target.value
-    })
+    
+    // console.log(e.target.value)
+      setDataForm({
+          ...dataForm,
+          [e.target.name]: e.target.value
+      })
 }
+    console.log(dataForm);
   return (
     <div>
       
@@ -77,7 +72,7 @@ export default function Cart() {
         <div className='carrito-titulo'>
         
           <h1>Cart</h1>
-           <h3>{id.length !== '' && ` El id de la compra es: ${id}`}</h3> 
+           <h3>{idOrden.length !== '' && ` El id de la compra es: ${idOrden} `}</h3> 
               <p> Productos en carrito : {cartList.length}</p>
             
               <p>Total precio : $ {TotalPrice}</p>
@@ -85,28 +80,31 @@ export default function Cart() {
             <div className="carrito-detalle">
               
               {cartList.map(item => 
-              <div className="carrito-items">
-                <div key={item.id}> <img src={item.foto} />
-                    <div className="carrito-elimi">
-                         <button onClick={()=>eliminar(item.id)}><img src={elimi} /></button>
+              <li key={item.id}>
+                <div className="carrito-items">
+                  <div > <img src={item.foto} />
+                      <div className="carrito-elimi">
+                          <button onClick={()=>eliminar(item.id)}><img src={elimi} /></button>
+                      </div>
+                    <p>Nombre: {item.name}</p> 
+                    <p>Precio por unidad:{item.price}</p>
+                    <div className="contador-btn">
+                      <button >-</button>
+                        <label>{item.cantidad}</label>
+                      <button >+</button>
+                      <Link to="/">
+                      <button>Seguir Comprando</button>
+                      </Link>
                     </div>
-                  <p>Nombre: {item.name}</p> 
-                  <p>Precio por unidad:{item.price}</p>
-                  <div className="contador-btn">
-                    <button >-</button>
-                      <label>{item.cantidad}</label>
-                    <button onClick={()=>sumar(item.cantidad)} >+</button>
-                    <Link to="/">
-                     <button>Seguir Comprando</button>
-                    </Link>
                   </div>
                 </div>
-              </div>)}
+              </li>)}
           </div>
           <button onClick={vaciarCart}>Vaciar Carrito</button>
           
           <form
-          onSubmit={crearOrden}>
+             onSubmit={crearOrden}
+            >
 
             <input
               type="text"
@@ -114,7 +112,7 @@ export default function Cart() {
               placeholder="name"
               value={dataForm.name}
               onChange={handleOnChange}
-              required/><br/>
+             /><br/>
 
            <input
               type="text"
@@ -122,18 +120,31 @@ export default function Cart() {
               placeholder="phone"
               value={dataForm.phone}
               onChange={handleOnChange}
-              required/><br/>
+             /><br/>
             
 
-            <input
-              type="text"
+            <input className="emailValidar"
+              type="email"
               name='email'
               placeholder="email"
-              value={dataForm.email}
+              value={dataForm.email}  
               onChange={handleOnChange}
-              required/><br/>
+              /><br/>
+           
+            <input className="emailValidarDos"
+              type="email"
+              name='email'
+              placeholder="Repetir email"
+              value={dataForm.email}  
+              onChange={handleOnChange}
+              /><br/>
+             
+              
+             
+              
+            
 
-            <button onClick={crearOrden}>Finalizar Compra</button>
+            <button >Finaliza</button>
 
           </form>
          
