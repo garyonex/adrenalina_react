@@ -8,11 +8,11 @@ import{collection, getDocs, getFirestore, query, where,} from 'firebase/firestor
 
 
 export default function ItemPromise (){
-    // const [muestra, setMuestra] = useState([])// el array vacio es para iniciarlo
+    const [muestra, setMuestra] = useState([])// el array vacio es para iniciarlo
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)//tiene que ser un dato boleano
     const {categoriaId} = useParams()
-    console.log(categoriaId);
+   
 
     // useEffect(() => {
     //         if (categoriaId) 
@@ -88,7 +88,7 @@ export default function ItemPromise (){
         const db = getFirestore()
         if(categoriaId){
             const queryColection = collection(db, 'productos')
-            const queryFilter = query( queryColection, where('categoria', '==',categoriaId) )    
+            const queryFilter = query( queryColection, where('categoria', '==', categoriaId) )    
                 getDocs(queryFilter)
                 .then(resp=> setProducto(resp.docs.map(obj => ( { id: obj.id, ...obj.data()}))))
                 .catch(err=>console.log(err))

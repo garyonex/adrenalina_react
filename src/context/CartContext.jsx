@@ -15,12 +15,20 @@ export function CartContextProvider({children}) {
     }
     const enCart =(id) =>{
         return cartList.some((prod)=>prod.id === id)
+       
     }
+    // const  isInCart =(item)=>{
+    //     return cartList.find(e => e.id === item.id) === undefined
+    // }
     const vaciarCart =()=>{
         setCartList([])
     }
     const eliminar = (id) =>{
        return setCartList(cartList.filter((item)=>item.id !== id))
+    }
+
+    const totalItem =()=> {
+        return cartList.reduce((acc, obj) => acc +- obj.cantidad, 0)
     }
 
   return (
@@ -29,7 +37,8 @@ export function CartContextProvider({children}) {
         agregarCart,
         vaciarCart,
         enCart,
-        eliminar
+        eliminar,
+        totalItem
         
     }}>
         {children}
