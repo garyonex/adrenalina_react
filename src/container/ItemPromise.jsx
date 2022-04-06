@@ -39,29 +39,6 @@ export default function ItemPromise (){
     //                     setLoading(false);
     //                 })
     //         }
-
-    //     }, [categoriaId]) 
-        // console.log(muestra) 
-        // console.log(categoriaId)
-        
-    // useEffect(() => {
-    //     let url = './assets/DATA.json' 
-    //     fetch(url)
-    //     .then((resp) => resp.JSON())
-    //     .then((resp) => console.log(resp))
-    // }, [])
-   
-    // useEffect(() => {
-    //     const url = `https://pokeapi.co/api/v2/pokemon/?limit=20`
-    //     fetch(url)
-    //     .then((resp) =>{return resp.json()})
-    //     .then((resp) => {
-    //         console.log (resp.results)
-    //         resp.results.forEach(e=>{
-    //             console.log(e.name)
-    //         })
-    //     })
-    // }, [])
         
     //INICIANDO EL FIREBASE / una sola
     // useEffect(()=>{

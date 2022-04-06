@@ -2,16 +2,25 @@ import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import elimi from "../imagenes/1214428.png"
 import { addDoc, collection, getFirestore, updateDoc, doc, query, where, getDocs, writeBatch, documentId} from "firebase/firestore"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+
 
 export default function Cart() {
  
   const [dataForm, setDataForm] = useState({
     name: '', email: '' , phone: ''
   })
+  useEffect(() => {
+    console.log('add')
+  
+    return () => {
+      console.log('remove')
+    }
+  }, [dataForm])
+  
   const [idOrden, setIdOrden] = useState('')
 
-  const { cartList, vaciarCart, eliminar} = useCartContext()
+  const { cartList, vaciarCart, eliminar, isInCart} = useCartContext()
   // console.log(cartList)
   const TotalPrice= cartList.reduce((acc, obj) => acc +(obj.price * obj.cantidad), 0)
 
@@ -36,12 +45,7 @@ export default function Cart() {
     .cath(err=> console.error(err))
     .finally(()=>console.log('termino'))
     
-//cargargar al firebase
-    // const queryUpdate=doc(db, 'productos', 
-    // 'QoYSrJMssw5bwyZuTdek' )
-    // updateDoc(queryUpdate,{
-    //   Stock:110
-    // })
+
     const queryCollection = collection(db,'productos')
     const queryActStock = await query(
       queryCollection, where(documentId(), 'in', cartList.map(it => it.id ))
@@ -85,13 +89,11 @@ export default function Cart() {
                   <div > <img src={item.foto} />
                       <div className="carrito-elimi">
                           <button onClick={()=>eliminar(item.id)}><img src={elimi} /></button>
-                      </div>
+                      </div>{isInCart(item.id)}
                     <p>Nombre: {item.name}</p> 
                     <p>Precio por unidad:{item.price}</p>
                     <div className="contador-btn">
-                      <button >-</button>
                         <label>{item.cantidad}</label>
-                      <button >+</button>
                       <Link to="/">
                       <button>Seguir Comprando</button>
                       </Link>
@@ -138,13 +140,10 @@ export default function Cart() {
               value={dataForm.email}  
               onChange={handleOnChange}
               /><br/>
-             
-              
-             
-              
-            
 
-            <button >Finaliza</button>
+            <Link to="/compraFinal">
+                    <button >Finalizar Compra</button>
+            </Link>
 
           </form>
          

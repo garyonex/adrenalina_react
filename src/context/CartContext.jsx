@@ -9,17 +9,27 @@ export const CartContext = createContext([])
 export function CartContextProvider({children}) {
     const [cartList, setCartList] = useState([])
 
-    const agregarCart = (item)=>{
-        
-            setCartList([ ...cartList, item ])
+    const agregarCart = (prod)=>{
+        let prodEncontrado = cartList.find(producto => producto.id === prod.id)
+           if(prodEncontrado){
+               let nuevoCarrito = cartList.map(prodEnCart =>{
+                   if(prodEnCart.id === prodEncontrado.id){
+                       prodEnCart.units =prodEnCart.units + prod.units
+                   }
+                   return prodEnCart
+               })
+               setCartList(nuevoCarrito)
+           } else {
+               setCartList( [ ...cartList, prod])
+           }
     }
     const enCart =(id) =>{
         return cartList.some((prod)=>prod.id === id)
        
     }
-    // const  isInCart =(item)=>{
-    //     return cartList.find(e => e.id === item.id) === undefined
-    // }
+    const  isInCart =(item)=>{
+        return cartList.find(e => e.id === item.id) === undefined
+    }
     const vaciarCart =()=>{
         setCartList([])
     }
@@ -38,7 +48,8 @@ export function CartContextProvider({children}) {
         vaciarCart,
         enCart,
         eliminar,
-        totalItem
+        totalItem,
+        isInCart
         
     }}>
         {children}
