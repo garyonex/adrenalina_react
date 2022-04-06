@@ -55,12 +55,11 @@ const ItemDetail = ({detail}) => {
                                         </p>
                                        
                                 <div className="item-footer">
-                                    { enCart(detail.id)?
-                                    <Link to="/cart">
-                                        <div className='contador-btn'>
-                                            <button>En carrito</button>
-                                        </div>
-                                    </Link>
+                                    { cartList?
+                                      <ItemCount
+                                      inicial= {1} stock={detail.Stock} onAdd={onAdd}>
+                                      </ItemCount>
+                                      
                                     :
                                     <ItemCount
                                     inicial= {1} stock={detail.Stock} onAdd={onAdd}>

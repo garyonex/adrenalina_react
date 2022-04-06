@@ -39,7 +39,7 @@ function Item({prod}) {
                     <button>Detalle Producto</button>
               </div>
             </Link>
-            { enCart(prod.id) ?
+            { cambia?
             <Link to="/cart">
                 <div className='contador-btn'>
                     <button> Ir al Carrito</button>

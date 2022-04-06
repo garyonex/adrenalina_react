@@ -8,6 +8,7 @@ import { CartContextProvider } from './context/CartContext';
 import Cart from './components/carrito/Cart';
 import { TextComponent2, TextComponent3, TextComponent4, TextComponent6, TextComponent7, TextComponet } from './components/condicionales/ComponentesCondicionales';
 import getFirestoreApp from './firebase/configFirebase';
+import CompraFinal from './components/compraFinal/CompraFinal';
 getFirestoreApp()
 
 
@@ -37,10 +38,11 @@ function App() //componente
 				<Route path='/categoria/:categoriaId' element={<ItemPromise />} />
 				<Route path='/detalle/:detalleId' element={<ItemDetailContainer />}/>
 				<Route path='/cart' element={ <Cart/>}/>
+				<Route path='/compraFinal' element={<CompraFinal/>}/>
 			
 				{/* asociamos cada elemento */}
-				<Route path='/*' element={ <Navigate To='/' replace />}/>
-				<Route path='*' element={<h1>Not Found</h1>}/>
+				
+				<Route path='*' element={<center><h1>Not Found</h1></center>}/>
 				{/* le decimos que cualquier otra ruta a las NO especificadas me redireccione al home */}
 				
 			</Routes>
