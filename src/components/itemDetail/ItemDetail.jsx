@@ -55,11 +55,16 @@ const ItemDetail = ({detail}) => {
                                         </p>
                                        
                                 <div className="item-footer">
-                                    { cartList?
-                                      <ItemCount
-                                      inicial= {1} stock={detail.Stock} onAdd={onAdd}>
-                                      </ItemCount>
-                                      
+                                    { cambia?
+                                    
+                                    <div className='btn-add'>
+
+                                        <ItemCount inicial={1} stock={detail.Stock} onAdd={onAdd} />
+                                        <Link to="/cart">
+                                            <button className='btn-irAlCart'> Ir al Carrito</button>
+                                        </Link>
+                                    </div>
+                            
                                     :
                                     <ItemCount
                                     inicial= {1} stock={detail.Stock} onAdd={onAdd}>

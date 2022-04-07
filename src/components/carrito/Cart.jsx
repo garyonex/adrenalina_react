@@ -35,7 +35,7 @@ export default function Cart() {
       
         return {id, precio, nombre}
     }) 
-    console.log(orden)
+ 
 
 //CREAR EN FIREBASE
     const db = getFirestore()
@@ -76,7 +76,7 @@ export default function Cart() {
         <div className='carrito-titulo'>
         
           <h1>Cart</h1>
-           <h3>{idOrden.length !== '' && ` El id de la compra es: ${idOrden} `}</h3> 
+          
               <p> Productos en carrito : {cartList.length}</p>
             
               <p>Total precio : $ {TotalPrice}</p>
@@ -141,9 +141,10 @@ export default function Cart() {
               onChange={handleOnChange}
               /><br/>
 
-            <Link to="/compraFinal">
+            
                     <button >Finalizar Compra</button>
-            </Link>
+          
+            <h3 className="idCompra">{idOrden.length !== '' && ` El id de la compra es: ${idOrden} `}</h3>
 
           </form>
          
