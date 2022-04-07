@@ -10,19 +10,17 @@ export function CartContextProvider({children}) {
     const [cartList, setCartList] = useState([])
 
     const agregarCart = (prod)=>{
-        let prodEncontrado = cartList.find(producto => producto.id === prod.id)
-           if(prodEncontrado){
-               let nuevoCarrito = cartList.map(prodEnCart =>{
-                   if(prodEnCart.id === prodEncontrado.id){
-                       prodEnCart.units =prodEnCart.units + prod.units
-                   }
-                   return prodEnCart
-               })
-               setCartList(nuevoCarrito)
-           } else {
-               setCartList( [ ...cartList, prod])
-           }
-    }
+        const existeEnCart = cartList.find(itemEnCart =>itemEnCart.id === prod.id)
+        if(existeEnCart){
+           setCartList(
+               cartList.map((itemEnCart)=>{
+                    if(itemEnCart.id === prod.id){
+                        return{...existeEnCart, cantidad: existeEnCart.cantidad + prod.cantidad}
+                    } else return itemEnCart
+                 })
+               ) 
+        } else setCartList([ ... cartList,{...prod, cantidad : 1}])
+    }   
     const enCart =(id) =>{
         return cartList.some((prod)=>prod.id === id)
        

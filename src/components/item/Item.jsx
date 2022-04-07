@@ -39,12 +39,17 @@ function Item({prod}) {
                     <button>Detalle Producto</button>
               </div>
             </Link>
-            { cambia?
-            <Link to="/cart">
-                <div className='contador-btn'>
-                    <button> Ir al Carrito</button>
+            { cambia ?
+            
+                <div className='btn-add'>
+
+                    <ItemCount inicial={1} stock={prod.Stock} onAdd={onAdd} />
+                    <Link to="/cart">
+                      
+                    <button className='btn-irAlCart'> Ir al Carrito</button>
+                    </Link>
                 </div>
-            </Link>
+           
             :
             <ItemCount inicial={1} stock={prod.Stock} onAdd={onAdd} />
             }
