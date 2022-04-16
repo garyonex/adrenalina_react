@@ -1,11 +1,16 @@
-import { memo } from "react"
-import Item from "../item/Item"
+import { memo } from 'react';
+import Item from '../item/Item';
 
-const ItemList = 
-memo(({muestra}) => {
-  return (
-    muestra.map((prod)=><Item key={prod.id} prod={prod} />)
-  )
-}, (oldProps, newProps) => oldProps.productos.length === newProps.productos.length)
+const ItemList = memo(({ muestra }) => {
+    console.log('ItemList');
+    console.log(muestra);
+    return (
+        <div className='container-itemList'>
+            {muestra.map((prod) => (
+                <Item key={prod.id} prod={prod} />
+            ))}
+        </div>
+    );
+});
 
-export default ItemList
+export default ItemList;
