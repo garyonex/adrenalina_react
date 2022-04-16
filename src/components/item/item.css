@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.container-itemList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 80px;
+    margin: 20px;
+}
+
+.card {
+    background-color: rgba(4, 11, 48, 0.412);
+    align-content: center;
+    justify-content: center;
+    border: 1px solid royalblue;
+    height: 560px;
+    width: 320px;
+    border-radius: 10px;
+}
+.card-body-img {
+    height: 250px;
+    width: 250px;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 10px;
+}
+.card-body-img:hover {
+    opacity: 0.7;
+}
+.card-description p {
+    margin-top: -3px;
+    color: white;
+    font-size: 20px;
+}
+.btn-add button {
+    padding: 5px;
+    margin: 2px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-image: linear-gradient(
+        rgba(21, 147, 231, 0.145),
+        rgba(231, 21, 21, 0.289)
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    transition: background-size 500ms;
+}
+.btn-irAlCart {
+    margin-top: -20px;
+}
+.card-btn {
+    background-color: rgba(26, 159, 207, 0.357);
+    border-radius: 10px;
+    margin-top: -10px;
+}
+.card-btn:hover {
+    background-color: rgba(52, 20, 128, 0.419);
+}
+.card-header {
+    font-size: 30px;
+    background-color: rgb(25, 113, 190);
+    margin: 8px;
+    padding: 2px;
+    border-radius: 5px;
+}
