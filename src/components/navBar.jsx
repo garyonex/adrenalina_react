@@ -36,6 +36,9 @@ const NavBar = () => {
                         <li className='list-item centrar'>
                             <NavLink to='categoria/Tirar'>Tirar</NavLink>
                         </li>
+                        <li className='list-item centrar'>
+                            <NavLink to='categoria/Muñeco'>Muñeco</NavLink>
+                        </li>
                     
                         <li className='list-item centrar'>
                             <NavLink to='categoria/Protectores'>
