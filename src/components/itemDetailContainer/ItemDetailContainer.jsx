@@ -7,9 +7,7 @@ const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({});
     const [cargando, setCargando] = useState(true);
     const { detalleId } = useParams();
-    //! devuelve solo en string PENDIENTE
-    console.log(detalleId);
-
+    //! devuelve solo en string
     useEffect(() => {
         setTimeout(() => {
             const db = getFirestore();
@@ -19,7 +17,7 @@ const ItemDetailContainer = () => {
                 .catch((error) => console.log(error))
                 .finally(() => setCargando(false));
         }, 5000);
-    }, []);
+    });
 
     return (
         <>
