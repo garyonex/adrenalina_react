@@ -1,7 +1,7 @@
 import './App.css';
 import ItemPromise from './container/ItemPromise';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CartContextProvider } from './context/CartContext';
 import Cart from './components/carrito/Cart';
 import getFirestoreApp from './firebase/configFirebase';
