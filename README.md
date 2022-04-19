@@ -26,9 +26,10 @@ https://user-images.githubusercontent.com/94655079/163908953-724cef87-a159-4c3e-
 
 
 
-### Dependencias y librerias utilizadas
- -react router dom [npm i react-router-dom]
- -firebase [https://firebase.google.com/]
- -sweetalert2  [npm i sweetalert2]
- -fontmeme[ https://fontmeme.com/futuristic-fonts/]
+### Dependencias y librerias utilizadas:
+
+ - [react router dom [npm i react-router-dom]
+ - [firebase]  [https://firebase.google.com/]
+ - [sweetalert2]   [npm i sweetalert2]
+ - [fontmeme] [ https://fontmeme.com/futuristic-fonts/]
 
