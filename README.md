@@ -20,7 +20,11 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-![] <img src='./src/components/imagenes/gifAdrenalina.mp4'>
+
+
+https://user-images.githubusercontent.com/94655079/163908953-724cef87-a159-4c3e-a942-150395bd0ffc.mp4
+
+
 
 ### Dependencias y librerias utilizadas
  react router dom [npm i react-router-dom]
