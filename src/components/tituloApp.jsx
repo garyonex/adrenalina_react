@@ -1,14 +1,11 @@
 
-  
-  //Esto es un componente
-
-  const TituloApp =({titulo, subtitulo, saludo}) => {
+  const TituloApp =({titulo, subtitulo}) => {
 
     return (
         <div>
-            <h1>{ titulo }</h1>
+            <h1 className="bg-titulo">{ titulo }</h1>
             <h2>{subtitulo}</h2>
-            {/* <button onClick={saludo}>ejecutar saludo</button> */}
+         
         </div>
     )
     
