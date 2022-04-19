@@ -26,15 +26,7 @@ function App() {
                             element={<ItemDetailContainer />}
                         />
                         <Route path='/cart' element={<Cart />} />
-                        <Route
-                            path='*'
-                            element={
-                                <center>
-                                    <h1 className='not-found'>Not Found</h1>
-                                    <Link to='/'>Home</Link>
-                                </center>
-                            }
-                        />
+                        <Route path='/*' element={ <Navigate to='/' replace /> } />
                     </Routes>
                 </div>
             </BrowserRouter>

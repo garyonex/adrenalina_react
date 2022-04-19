@@ -19,3 +19,12 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+![] <img src='./src/components/imagenes/gifAdrenalina.mp4'>
+
+### Dependencias y librerias utilizadas
+ react router dom [npm i react-router-dom]
+ firebase [https://firebase.google.com/]
+ sweetalert2  [npm i sweetalert2]
+ fontmeme[ https://fontmeme.com/futuristic-fonts/]
+
