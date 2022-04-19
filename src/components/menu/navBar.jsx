@@ -1,19 +1,25 @@
-import LogoContainer from './logoContainer';
-import imagen from './imagenes/adrenalina.png';
-import TituloApp from './tituloApp';
+import LogoContainer from '../logoContainer';
+import imagen from '../imagenes/adrenalina.png';
+import TituloApp from '../tituloApp';
 import { NavLink } from 'react-router-dom';
-import ImagenContainer from './ImagenContainer';
+import ImagenContainer from '../ImagenContainer';
 
 const NavBar = () => {
     return (
         <div className=''>
             <div className='navBar-titulo'>
                 <TituloApp
-                    titulo={<img className='titulo-header' src={imagen} alt='adrenalina-app' />}
+                    titulo={
+                        <img
+                            className='titulo-header'
+                            src={imagen}
+                            alt='adrenalina-app'
+                        />
+                    }
                 />
             </div>
             <nav className='navbar container'>
-                <div>
+                <div className='navbar_logo'>
                     <NavLink to='/'>
                         <LogoContainer />
                     </NavLink>
@@ -27,7 +33,7 @@ const NavBar = () => {
                         <li className='list-item centrar'>
                             <NavLink to='/'>Inicio</NavLink>
                         </li>
-                        <li className='list-item  centrar'>
+                        <li className='list-item centrar'>
                             <NavLink to='categoria/Romper'>Romper</NavLink>
                         </li>
                         <li className='list-item centrar'>
@@ -36,12 +42,16 @@ const NavBar = () => {
                         <li className='list-item centrar'>
                             <NavLink to='categoria/Tirar'>Tirar</NavLink>
                         </li>
-                    
+                        <li className='list-item centrar'>
+                            <NavLink to='categoria/Muñeco'>Muñeco</NavLink>
+                        </li>
+
                         <li className='list-item centrar'>
                             <NavLink to='categoria/Protectores'>
                                 Proteccion
                             </NavLink>
                         </li>
+
                         <li className='list-item'>
                             <button className='botonComprar'>
                                 <NavLink to='cart'>

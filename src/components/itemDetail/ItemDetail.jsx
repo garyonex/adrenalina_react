@@ -13,7 +13,7 @@ const ItemDetail = ({ detail }) => {
         setCambia(cant);
         agregarCart({ ...detail, cantidad: cant });
     };
-    //! console.log(cartList); // esto muestra que es lo que se esta agregando
+    
     return (
         <div>
             <Greeting saludo={'Detalle del producto'} />

@@ -11,7 +11,8 @@ import {
     writeBatch,
     documentId,
 } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 export default function Cart() {
     const [dataForm, setDataForm] = useState({
@@ -79,6 +80,15 @@ export default function Cart() {
             [e.target.name]: e.target.value,
         });
     };
+    const mostrarAlert = () => {
+        Swal.fire({
+            title: `Gracias por su compra ${dataForm.name}`,
+            text: `Email ${dataForm.email} `,
+            footer: `su ID de compra ${idOrden}`,
+            icon: 'success',
+            button: `'Aceptar'`,
+        });
+    };
     console.log(dataForm);
     return (
         <div>
@@ -98,19 +108,19 @@ export default function Cart() {
                                 <div className='carrito-items'>
                                     <div>
                                         {' '}
-                                        <img src={item.foto} />
+                                        <img src={item.foto} alt={item.name} />
                                         <div className='carrito-elimi'>
                                             <button
                                                 onClick={() =>
                                                     eliminar(item.id)
                                                 }
                                             >
-                                                <img src={elimi} />
+                                                <img src={elimi} alt='eliminar' />
                                             </button>
                                         </div>
                                         {isInCart(item.id)}
                                         <p>Nombre: {item.name}</p>
-                                        <p>Precio por unidad:{item.price}</p>
+                                        <p>Precio por unidad: {item.price}</p>
                                         <div className='contador-btn'>
                                             <label>{item.cantidad}</label>
                                             <Link to='/'>
@@ -125,7 +135,7 @@ export default function Cart() {
                         ))}
                     </div>
                     <button onClick={vaciarCart}>Vaciar Carrito</button>
-                    
+
                     {/* formulario para suscribirse y comprar */}
                     <form onSubmit={crearOrden}>
                         <input
@@ -134,6 +144,7 @@ export default function Cart() {
                             placeholder='name'
                             value={dataForm.name}
                             onChange={handleOnChange}
+                            required
                         />
                         <br />
 
@@ -143,6 +154,7 @@ export default function Cart() {
                             placeholder='phone'
                             value={dataForm.phone}
                             onChange={handleOnChange}
+                            required
                         />
                         <br />
 
@@ -153,26 +165,28 @@ export default function Cart() {
                             placeholder='email'
                             value={dataForm.email}
                             onChange={handleOnChange}
+                            required
                         />
                         <br />
-
                         <input
                             className='emailValidarDos'
                             type='email'
                             name='email'
-                            placeholder='Repetir email'
+                            placeholder='email'
                             value={dataForm.email}
                             onChange={handleOnChange}
+                            required
                         />
                         <br />
 
-                        <button>Finalizar Compra</button>
-
-                        <h3 className='idCompra'>
-                            {idOrden.length !== '' &&
-                                ` El id de la compra es: ${idOrden} `}
-                        </h3>
+                        <button onClick={() => mostrarAlert()}>
+                            Finalizar Compra
+                        </button>
                     </form>
+                    <h3 className='idCompra'>
+                        {idOrden.length !== '' &&
+                            ` El id de la compra es: ${idOrden} `}
+                    </h3>
                 </div>
             ) : (
                 //TODO no esta en el carrito, entonces
